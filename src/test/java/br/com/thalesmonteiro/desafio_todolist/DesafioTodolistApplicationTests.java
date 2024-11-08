@@ -4,11 +4,14 @@ import br.com.thalesmonteiro.desafio_todolist.entidy.Todo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-@ActiveProfiles("test")
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("test")
 class DesafioTodolistApplicationTests {
 
 	@Autowired
@@ -34,5 +37,15 @@ class DesafioTodolistApplicationTests {
 				.jsonPath("$[0].prioridade").isEqualTo(todo.getPrioridade());
 	}
 
-	// Outros testes...
+	@Test
+	void testCreateTodoFailure() {
+		webTestClient
+				.post()
+				.uri("/todos")
+				.bodyValue(new Todo("","",false,0))
+				.exchange()
+				.expectStatus().isBadRequest();
+	}
+
+
 }
