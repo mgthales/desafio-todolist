@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: br.com.thalesmonteiro.desafio_todolist.DesafioTodolistApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.194 s <<< FAILURE! -- in br.com.thalesmonteiro.desafio_todolist.DesafioTodolistApplicationTests
+br.com.thalesmonteiro.desafio_todolist.DesafioTodolistApplicationTests.testCreateTodoSuccess -- Time elapsed: 1.325 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.length()" expected:<1> but was:<31>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:123)
+	at org.springframework.test.web.reactive.server.JsonPathAssertions.isEqualTo(JsonPathAssertions.java:54)
+	at br.com.thalesmonteiro.desafio_todolist.DesafioTodolistApplicationTests.testCreateTodoSuccess(DesafioTodolistApplicationTests.java:35)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
