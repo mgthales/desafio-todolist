@@ -20,7 +20,7 @@ public class SwaggerConfig {
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                         .description("Documentação completa")
-                        .url("https://github.com/Thales3740/todolist"));
+                        .url("https://github.com/mgthales/desafio-todolist"));
     }
 }
 
